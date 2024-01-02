@@ -1,4 +1,3 @@
-"use client"
 import React from "react"
 import {
 	Navbar,
@@ -7,14 +6,9 @@ import {
 	NavbarItem,
 	Link,
 	Button,
-	NavbarMenu,
-	NavbarMenuItem,
-	NavbarMenuToggle,
 } from "@nextui-org/react"
 
-export default function Header() {
-	const [isMenuOpen, setIsMenuOpen] = React.useState(false)
-
+export default function App() {
 	const menuItems = [
 		{
 			id: "#hero",
@@ -33,65 +27,35 @@ export default function Header() {
 			item: "Projects",
 		},
 	]
-
 	return (
-		<header>
-			<Navbar
-				position="sticky"
-				onMenuOpenChange={() => setIsMenuOpen(!isMenuOpen)}
-			>
-				<NavbarContent>
-					<NavbarMenuToggle
-						aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-						className="sm:hidden"
-					/>
-					<NavbarBrand>
-						<p className="font-bold text-inherit">NAGARAJAN R J</p>
-					</NavbarBrand>
-				</NavbarContent>
-
-				<NavbarContent
-					className="hidden sm:flex gap-4"
-					justify="center"
-				>
-					{menuItems.map((menuItem, index) => {
-						return (
-							<NavbarItem key={index}>
-								<Link color="foreground" href={menuItem.id}>
-									{menuItem.item}
-								</Link>
-							</NavbarItem>
-						)
-					})}
-				</NavbarContent>
-				<NavbarContent justify="end">
-					<NavbarItem>
-						<Button
-							as={Link}
-							download={"nagacv"}
-							color="primary"
-							variant="flat"
-							href="/nagarajanrj_cv.pdf"
-						>
-							Download CV
-						</Button>
-					</NavbarItem>
-				</NavbarContent>
-				<NavbarMenu>
-					{menuItems.map((menuItem, index) => (
-						<NavbarMenuItem key={index}>
-							<Link
-								color={"foreground"}
-								className="w-full"
-								href={menuItem.id}
-								size="lg"
-							>
+		<Navbar position="static">
+			<NavbarBrand>
+				<p className="font-bold text-inherit">NAGARAJAN R J</p>
+			</NavbarBrand>
+			<NavbarContent className="hidden sm:flex gap-4" justify="center">
+				{menuItems.map((menuItem, index) => {
+					return (
+						<NavbarItem key={index}>
+							<Link color="foreground" href={menuItem.id}>
 								{menuItem.item}
 							</Link>
-						</NavbarMenuItem>
-					))}
-				</NavbarMenu>
-			</Navbar>
-		</header>
+						</NavbarItem>
+					)
+				})}
+			</NavbarContent>
+			<NavbarContent justify="end">
+				<NavbarItem>
+					<Button
+						as={Link}
+						download={"nagacv"}
+						color="primary"
+						variant="flat"
+						href="/nagarajanrj_cv.pdf"
+					>
+						Download CV
+					</Button>
+				</NavbarItem>
+			</NavbarContent>
+		</Navbar>
 	)
 }
