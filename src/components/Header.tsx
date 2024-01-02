@@ -36,7 +36,10 @@ export default function Header() {
 
 	return (
 		<header>
-			<Navbar onMenuOpenChange={setIsMenuOpen}>
+			<Navbar
+				position="sticky"
+				onMenuOpenChange={() => setIsMenuOpen(!isMenuOpen)}
+			>
 				<NavbarContent>
 					<NavbarMenuToggle
 						aria-label={isMenuOpen ? "Close menu" : "Open menu"}
