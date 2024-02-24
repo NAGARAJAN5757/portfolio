@@ -75,7 +75,7 @@ export default function Projects() {
 									{project.technologies.map(
 										(technology, index) => {
 											return (
-												<Chip key={index} size="sm">
+												<Chip key={index} color="secondary" size="sm">
 													{technology}
 												</Chip>
 											)

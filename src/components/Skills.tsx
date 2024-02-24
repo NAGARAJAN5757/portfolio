@@ -7,10 +7,13 @@ export default function Skills() {
 		"C++",
 		"Python",
 		"ReactJS",
+		"NodeJS",
+		"ExpressJS",
 		"NextJS",
 		"Typescript",
 		"TailwindCSS",
 		"Mysql",
+		"Mongodb"
 	]
 	return (
 		<section className="out-container" id="skills">

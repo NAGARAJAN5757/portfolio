@@ -1,6 +1,5 @@
 import React from "react"
 import EduDetail from "./EduDetail"
-import {Divider} from "@nextui-org/react"
 
 export type EduDetail = {course: string; courseDetail: string}
 
