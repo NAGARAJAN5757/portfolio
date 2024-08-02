@@ -1,5 +1,5 @@
-"use client";
-import React from "react";
+"use client"
+import React from "react"
 import {
     Navbar,
     NavbarBrand,
@@ -10,37 +10,19 @@ import {
     NavbarMenu,
     NavbarMenuItem,
     NavbarMenuToggle,
-} from "@nextui-org/react";
-import ThemeSwitch from "./ThemeMode";
+} from "@nextui-org/react"
+import ThemeSwitch from "./ThemeMode"
+import { menuItems } from "@/data/data"
 
 export default function Header() {
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-    console.log(isMenuOpen);
-
-    const menuItems = [
-        {
-            id: "#hero",
-            item: "About me",
-        },
-        {
-            id: "#education",
-            item: "Education",
-        },
-        {
-            id: "#skills",
-            item: "Skills",
-        },
-        {
-            id: "#projects",
-            item: "Projects",
-        },
-    ];
+    const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+    console.log(isMenuOpen)
 
     return (
         <Navbar
             isMenuOpen={isMenuOpen}
             onMenuOpenChange={() => {
-                setIsMenuOpen(!isMenuOpen);
+                setIsMenuOpen(!isMenuOpen)
             }}
             shouldHideOnScroll
         >
@@ -62,11 +44,11 @@ export default function Header() {
                                 {menuItem.item}
                             </Link>
                         </NavbarItem>
-                    );
+                    )
                 })}
             </NavbarContent>
             <NavbarContent justify="end">
-                <NavbarItem>
+                <NavbarItem className="cursor-pointer">
                     <ThemeSwitch />
                 </NavbarItem>
                 <NavbarItem>
@@ -97,5 +79,5 @@ export default function Header() {
                 ))}
             </NavbarMenu>
         </Navbar>
-    );
+    )
 }
